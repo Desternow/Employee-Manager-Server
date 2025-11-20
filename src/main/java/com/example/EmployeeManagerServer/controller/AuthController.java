@@ -16,11 +16,13 @@ public class AuthController {
         this.userService = userService;
     }
 
+    // Регистрация нового пользователя
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest registerRequest) {
         return userService.registerUser(registerRequest);
     }
 
+    // Логин существующего пользователя
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         return userService.loginUser(loginRequest);
