@@ -11,7 +11,7 @@ public class Role {
     private Long id;
 
     @Column(unique = true, nullable = false)
-    private String roleName; // "smth like EMPLOYEE", "HR", "MANAGER", "ACCOUNTANT..."
+    private String roleName; // "чот типо EMPLOYEE", "HR", "MANAGER", "ACCOUNTANT..."
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
@@ -35,5 +35,4 @@ public class Role {
     public void setRoleName(String newRoleName) {
         this.roleName = newRoleName;
     }
-
 }

@@ -1,6 +1,8 @@
 package com.example.EmployeeManagerServer.service;
 
 import com.example.EmployeeManagerServer.dto.TimeEntryRequest;
+import com.example.EmployeeManagerServer.dto.TimeEntryResponse;
+import com.example.EmployeeManagerServer.dto.UserResponse;
 import com.example.EmployeeManagerServer.model.TimeEntry;
 import com.example.EmployeeManagerServer.model.User;
 import com.example.EmployeeManagerServer.repository.TimeEntryRepository;
@@ -62,6 +64,9 @@ public class TimeService {
         }
 
         List<TimeEntry> entries = timeEntryRepository.findByUserAndDate(user, date);
-        return ResponseEntity.ok(entries);
+        List<TimeEntryResponse> response = entries.stream().map(TimeEntryResponse::new).toList();
+
+        return ResponseEntity.ok(response);
+
     }
 }

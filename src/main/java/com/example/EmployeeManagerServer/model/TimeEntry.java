@@ -57,5 +57,4 @@ public class TimeEntry {
     public void setType(TimeType newType) {
         this.type = newType;
     }
-
 }

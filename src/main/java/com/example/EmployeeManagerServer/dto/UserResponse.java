@@ -33,5 +33,4 @@ public class UserResponse {
     public String getEmail() {
         return email;
     }
-
 }
